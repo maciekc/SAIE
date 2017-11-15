@@ -1,44 +1,73 @@
-global Kr Kw1 Tw2 Kw2 To Ko z1 z2 r tau limit1 limit2 
+clear all
+close all
 
-P1 = 2;
+% Optymalizacja nastaw regulatorów w zale¿noœci od ró¿nych wartoœci
+% zadanych.
+
+global Kr Kw1 Tw2 Kw2 To Ko z1 z2 r tau limit1 limit2 limit3
+
+P1 = 5;
 D1 = 0.5;
 
-P2 = 3;
+P2 = 5;
 D2 = 0.5;
-P3 = 10;
-I3 = 2;
+P3 = 0.06;
+I3 = 0.045;
 
-Kr = 3;
-Kw1 = 2;
+P4 = 5;
+
+Kr = .3;
+Kw1 = 10;
 
 Tw2 = .1;
-Kw2 = 3;
-To = 2;
-Ko = 2;
+Kw2 = 5;
+To = 1;
+Ko = 10;
 
 z1 = 0;
 z2 = 0;
-r = 3;
-tau = 0;
+r = 10;
+tau = 1;
 limit1 = 20;
-limit2 = 10;
+limit3 = 40;
+limit2 = 40;
+%%
 
-X0 = [P1 D1 P2 D2 P3 I3];
-A = -eye(6);
-B = zeros(6,1);
-options = optimoptions('fmincon','Display','iter','Algorithm','sqp','MaxIterations',100);
-% options = optimoptions(@lsqnonlin,'Display','iter');
-par = fmincon(@cel, X0, A, B,[],[],[],[],[],options)
-% par = lsqnonlin(@cel, X0,[],[],options)
-% nastawy po optymalizacji 
-% par =
-% 
-%     0.5278    0.5000    3.0000    0.5000   19.3465         0
+X0 = [P1 D1 P2 D2 P3 I3 Kr P4];
+A = -eye(8);
+B = zeros(8,1);
+LB = [0 0 0 0 0 0 0 0];
+UB = [1 100 1 100 100 100 100 100];
+
+
+options = optimoptions('fmincon','Display','iter','MaxIterations',50);
+% options = optimoptions(@lsqnonlin,'Algorithm','sqp','Display','iter','MaxIterations',30);
+
+zad = [5 10 20 50 70];
+
+for i = 1:5
+    i
+    r = zad(i);
+    par = fmincon(@cel, X0, A, B,[],[],LB,UB,[],options)
+%     par = fmincon(@cel_P, X0, A, B,[],[],LB,UB,[],options)
+%     par = lsqnonlin(@cel, X0,LB,UB,options)
+    Parametry(i,:) = par;
+end
+
+%%
+
+index = 3;
+par = Parametry(index,:);
+r = zad(index);
+
 P1 = par(1);
 D1 = par(2);
 P2 = par(3);
 D2 = par(4);
 P3 = par(5);
 I3 = par(6);
+Kr = par(7);
+P4 = par(8);
 
-sim('model',20)
+
+sim('model2',50)

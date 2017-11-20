@@ -3,9 +3,12 @@ close all
 
 % Rysowanie odpowiedzi obiektu dla ró¿nych wartoœci zadanych
 % Model Simulinka - model2.slx
-% dane.mat - parametry systemu po optymalizacji
+% dane.mat - parametry systemu po optymalizacji bez z1
+% dane2.mat - parametry systemu z zak³óceniem z1 1
+% dane3.mat - paramtery systemy z zak³óceniem z1 2
 
-load('dane')
+
+load('dane2')
 
 for i=1:length(zad)
     r = zad(i);

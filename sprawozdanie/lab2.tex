@@ -1,0 +1,69 @@
+\chapter{Identyfikacja}
+
+
+\section{Model obiektu}
+
+Obiekt opisany jest transmitancją:
+\begin{equation}\label{key}
+G(s) = \dfrac{K_0}{(T_0 \cdot s + 1)^n} \cdot e^{-\tau \cdot s} 
+\end{equation} 
+ 
+ 
+\section{Optymalizacja nastaw regulatora}
+
+Do optymalizacji nastaw regulatorów wykorzystana została funkcja \textit{fmincon} z pakietu MATALB. Badania przeprowadzone zostały dla różnych zestawów parametrów opisujących właściwości rozważanego systemu.
+
+\subsection{Zestawy parametrów}
+
+W tabeli \ref{tab_par} zamieszczono przyjęte zestawy parametrów.
+
+\begin{table}[]
+	\centering
+	\caption{Zestawy parametrów dla których przeprowadzano optymalizację nastaw regulatorów.}
+	\label{tab_par}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Nr zestawu\textbackslash\\ Parametr\end{tabular}} & 1   & 2 &  &  \\ \hline
+		$K_{w1}$                                                                                          & 10  &   &  &  \\ \hline
+		$K_{w2}$                                                                                          & 5   &   &  &  \\ \hline
+		$T_{w2}$                                                                                          & 0.1 &   &  &  \\ \hline
+		$T_0$                                                                                             & 1   &   &  &  \\ \hline
+		$K_0$                                                                                             & 10  &   &  &  \\ \hline
+		$n$                                                                                                 & 3   &   &  &  \\ \hline
+		$\tau$                                                                                            & 1   &   &  &  \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Optymalizacja nastaw regulatorów}
+Dla kolejnych zestawów parametrów opisujących system przeprowadzano procedurę optymalizacji nastaw regulatorów minimalizując wska\'znik jakości opisany zależnością \ref{wsk_jak}. Proces optymalizacji przeprowadzany był dla różnych wartości zadanych w obecności znanego zakłócenia $z_2$ (zakłócenie skokowo zmieniające swoją wartość). 
+
+\begin{table}[]
+	\centering
+	\caption{Parametry regulatorów dla pierwszego zestawu zmiennych systemowych  z tabeli \ref{tab_par}.}
+	\label{par_reg_zes1}
+	\begin{tabular}{|c|c|c|c|c|l|l|l|}
+		\hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Parametr regulatora\textbackslash\\ Wart. zadana\end{tabular}} & $P1$ & $D1$ & $P2$ & $D2$ & $P3$ & $I3$ & $Kr$ \\ \hline
+		5 & 0,212	& 0,515 &	0,324 &	2,42 &	0,024 &	2,98e-09 &	0,641 \\ \hline
+		10 & 0,101 &	1,73	&  0,098 &	90,34 &	0,013 &	1,81e-07 &	0,538 \\ \hline
+		20 & 0,113 &	13,74	&  0,202 &	26,67 &	3,661e-07 &	2,17e-07 &	0,580 \\ \hline
+		50 & 0,123	& 99,99	& 0,109 &	0,347 &	0,0074 &	5,60e-07 &	0,076  \\ \hline
+		70 & 0,0028 &	99,99 &	0,0061 &	7,301 &	0,0761	& 0,0261	& 0,7111 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[]
+	\centering
+	\caption{Wartości wska\'znika jakości dla różnych wartości zadanych i różnych zestawów parametrów opisujących system.}
+	\label{my-label}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Nr zestawu\textbackslash\\ Wart. zadana\end{tabular}} & 1      & 2 &  &  \\ \hline
+		5                                                                                                     & 48.64  &   &  &  \\ \hline
+		10                                                                                                    & 65.63  &   &  &  \\ \hline
+		20                                                                                                    & 95.05  &   &  &  \\ \hline
+		50                                                                                                    & 185.35 &   &  &  \\ \hline
+		70                                                                                                    & 272.80 &   &  &  \\ \hline
+	\end{tabular}
+\end{table}

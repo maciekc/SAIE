@@ -16,7 +16,7 @@ I3 = 0.045;
 
 P4 = 5;
 
-Kr = .3;
+Kr = 1.3;
 Kw1 = 10;
 
 Tw2 = .1;
@@ -36,11 +36,11 @@ limit2 = 40;
 X0 = [P1 D1 P2 D2 P3 I3 Kr P4];
 A = -eye(8);
 B = zeros(8,1);
-LB = [0 0 0 0 0 0 0 0];
-UB = [1 100 1 100 100 100 100 100];
+LB = [0 0 0 0 0 0 1 0];
+UB = [10 10 10 10 100 100 100 100];
 
 
-options = optimoptions('fmincon','Display','iter','MaxIterations',50);
+options = optimoptions('fmincon','Display','iter','MaxIterations',100);
 % options = optimoptions(@lsqnonlin,'Algorithm','sqp','Display','iter','MaxIterations',30);
 
 zad = [5 10 20 50 70];
@@ -56,7 +56,7 @@ end
 
 %%
 
-index = 3;
+index = 5;
 par = Parametry(index,:);
 r = zad(index);
 

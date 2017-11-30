@@ -7,6 +7,7 @@ close all
 % dane2.mat - parametry systemu z zak³óceniem z1 1
 % dane3.mat - paramtery systemy z zak³óceniem z1 2
 
+%dane6 - do recznej optymalizacji 
 
 load('dane2')
 

@@ -1,0 +1,44 @@
+time = ScopeData.time;
+y = ScopeData.signals(1).values;
+uPD1 = ScopeData.signals(2).values;
+uPI = ScopeData.signals(3).values;
+uPD2 = ScopeData.signals(4).values;
+z1 = ScopeData1.signals(1).values;
+z2 = ScopeData1.signals(2).values;
+
+figure(1);
+subplot(2,1,1);
+plot(time, y); hold on;
+plot(time, r*ones(size(time)), 'r');
+grid on;
+title('y');
+subplot(2,1,2);
+plot(time, uPD1);
+grid on;
+title('uPD1');
+name1 = genvarname(['fig1_' num2str(n) '_' num2str(r)]);
+print(name1,'-dpng');
+
+figure(2);
+subplot(2,1,1);
+plot(time, uPI);
+grid on;
+title('uPI');
+subplot(2,1,2);
+plot(time, uPD2);
+grid on;
+title('uPD2');
+name2 = genvarname(['fig2_' num2str(n) '_' num2str(r)]);
+print(name2,'-dpng');
+
+figure(3);
+subplot(2,1,1);
+plot(time, z1);
+grid on;
+title('z1');
+subplot(2,1,2);
+plot(time, z2);
+grid on;
+title('z2');
+name3 = genvarname(['fig3_' num2str(n) '_' num2str(r)]);
+print(name3,'-dpng');

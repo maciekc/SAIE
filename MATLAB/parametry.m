@@ -29,7 +29,7 @@ Ko = 10;
 
 z1 = 0;
 z2 = 0;
-r = 10;
+% r = 70;
 tau = 1;
 limit1 = 20;
 limit3 = 40;
@@ -38,18 +38,39 @@ zad = [5 10 20 50 70];
 
 %%
 % model do sumulacji - model2.slx
-%nale¿y podmieniaæ bloczek obiektu w zale¿noœci od wartoœci wspó³czynnika n
-% W plikach n1_param_v2, n2_param_v2 i n3_param_v2 sa parametry regulatorów
-% dla odpowiednio n = 1,2 i 3.
-% kolejnoœæ parametrów
-% wiersze w tabeli Parametry odnosi siê do kolejnych wartoœæ zadanych
-% index = 5;
-% par = Parametry(index,:);
-% 
-% P1 = par(1);
-% D1 = par(2);
-% P2 = par(3);
-% D2 = par(4);
-% P3 = par(5);
-% I3 = par(6);
-% Kr = par(7);
+% ¯eby to dzia³a³o jak nale¿y to trzeba zmieniaæ ³adowane parametry, tj.
+% dla n = 1 -> load('par_new_1.mat'), n=2 -> load('par_new_2.mat')
+% n=3 -> load('par_new_3.mat');
+% Nale¿y te¿ podmieniaæ bloczek obiektu w zale¿noœci od wartoœci
+% wspó³czynnika n;
+% Ka¿dy kolejny wiersz w tabeli Parametry odnosi siê do kolejnych wartoœæ
+% zadanych wiêc trzeba zmieniaæ wartoœæ index inaczej ca³y czas bêdzie siê
+% liczy³o dla tej samej wartoœci zadanej;
+% Wykresy bêd¹ siê zapisywa³y do plików automatycznie, legenda: fig1_1_5 to
+% pierwszy wykres, dla rzêdu 1 i wartoœci zadanej 5;
+% W zmiennej res s¹ przechowywane posortowane dane, które póŸniej wystarczy
+% tylko wrzucaæ do SAIE_nastawy.xml, czyli ctrl+c, ctrl+v
+
+n=1;
+load('par_new_1.mat');
+index = 5;
+par = Parametry(index,:);
+
+P1 = par(1);
+D1 = par(2);
+P2 = par(3);
+D2 = par(4);
+P3 = par(5);
+I3 = par(6);
+Kr = par(7);
+r = zad(index);
+sim('model2.slx')
+res(1)=P1;
+res(2)=D1;
+res(3)=P2;
+res(4)=D2;
+res(5)=P3;
+res(6)=I3;
+res(7)=Kr;
+res(8)=J;
+toFigure;

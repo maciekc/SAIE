@@ -11,7 +11,9 @@ close all
 
 load('dane2')
 
-for i=1:length(zad)
+%%
+
+for i=1:1%length(zad)
     r = zad(i);
     par = Parametry(i,:);
 
@@ -22,9 +24,9 @@ for i=1:length(zad)
     P3 = par(5);
     I3 = par(6);
     Kr = par(7);
-    P4 = par(8);
+%     P4 = par(8);
 
-    sim('model2', 50)
+    sim('model2_2016a', 50)
     wsp(i) = J;
     figure(i)
     subplot(211)

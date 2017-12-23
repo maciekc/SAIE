@@ -1,34 +1,24 @@
-\chapter{Identyfikacja}
-
-
-\section{Model obiektu}
-
-Obiektem sterowania był model Strejca opisany  transmitancją:
-\begin{equation}\label{key}
-G(s) = \dfrac{K_0}{(T_0 \cdot s + 1)^n} \cdot e^{-\tau \cdot s} 
-\end{equation}
-Na potrzeby niniejszej pracy ograniczono się do obserwacji zachowania modeli rzędu pierwszego, drugiego oraz trzeciego.
- 
+\chapter{Optymalizacja}
  
 \section{Optymalizacja nastaw regulatora}
 
-Do optymalizacji nastaw regulatorów wykorzystana została funkcja \textit{fmincon} z pakietu MATALB. Badania przeprowadzone zostały dla jednego zestawu parametrów z jednoczesną zmianą rzędu obiektu, którym sterowano.
-
+Do optymalizacji nastaw regulatorów wykorzystano skrypty zawarte w rozdziale \ref{implementacja}. Badania przeprowadzone zostały dla zestawu parametrów obiektu zaprezentowanego w tabeli \ref{tab_par}. Rząd obiektu jak i wartość zadana były były zmiennymi parametrami i  odpowiednio wartości: \\
+$ n \in \{1,2,3\} $ - rząd obiektu, \\
+$ z \in \{ 5,10,20,50,70\}$ - wartość zadana \\ 
 \subsection{Zestawy parametrów}
-
-W tabeli \ref{tab_par} zamieszczono przyjęte wartości parametrów.
+W tabeli \ref{tab_par} zamieszczono przyjęte wartości parametrów opisujących obiekt regulacji.
 \begin{table}[]
 	\centering
 	\caption{Zestawy parametrów dla których przeprowadzano optymalizację nastaw regulatorów.}
 	\label{tab_par}
 	\begin{tabular}{|c|c|} \hline
 	Parametr & Wartość \\ \hline
-	$K_{w1}$                                             & 10 \\ \hline
-	$K_{w2}$                                                                                         & 5 \\ \hline
-		$T_{w2}$                                                                                          & 0.1 \\ \hline
-		$T_0$                                                                                             & 1 \\ \hline
-		$K_0$                                                                                             & 10 \\ \hline
-		$\tau$                                                                                            & 1 \\ \hline
+	$K_{w1}$  & 10 \\ \hline
+	$K_{w2}$  & 5 \\ \hline
+	$T_{w2}$  & 0.1 \\ \hline
+	$T_0$   & 1 \\ \hline
+	$K_0$   & 10 \\ \hline
+	$\tau$ & 1 \\ \hline
 	\end{tabular}
 \end{table}
 

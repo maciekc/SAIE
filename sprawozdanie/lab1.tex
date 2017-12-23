@@ -11,7 +11,16 @@ Celem niniejszej pracy była analiza oraz dobór parametrów systemu adaptacyjne
 	\label{model_systemu}
 \end{figure} 
 
-Poszczególne regulatory znajdujące się na schemacie opisano następującymi wzorami: 
+\section{Model obiektu}
+
+Obiektem sterowania był model Strejca, opisany  transmitancją:
+\begin{equation}\label{key}
+G(s) = \dfrac{K_0}{(T_0 \cdot s + 1)^n} \cdot e^{-\tau \cdot s} 
+\end{equation}
+Na potrzeby niniejszej pracy ograniczono się do obserwacji zachowania modeli rzędu pierwszego, drugiego oraz trzeciego.
+
+\section{Regulatory}
+Poszczególne regulatory znajdujące się na schemacie \ref{model_systemu} opisano następującymi wzorami: 
 \begin{equation}\label{reg1}
 PD_1 = \alpha_1+\beta_1 \cdot s
 \end{equation}
@@ -30,6 +39,10 @@ Wartości parametrów $K_{w1}$, $K_{w2}$, $T_w$, $K_0$ potraktowano jako zadane.
 
 W ramach projektu należało przeprowadzić optymalizację poszczególnych parametrów podanych powyżej regulatorów, tj. $\alpha_1$, $\beta_1$, $\alpha_2$, $\beta_2$, $\gamma$, $\delta$. Wskaźnikiem jakości, na mocy którego optymalizowano działanie całego układu, była całka z modułu uchybu:
 \begin{equation}\label{wsk_jak}
-J = \int |r-y| dt
-\end{equation}. Ponadto przyjęto, iż oczekiwanym efektem optymalizacji będzie takie zachowanie układu, by bez względu na wartości zakłóceń $z_1$ i $z_2$, efekt nadążania i stabilizacji będzie najlepszy.
+J = \int |e(t)| dt
+\end{equation}
+gdzie: \\
+$e(t) = r(t) - y(t)$ - uchyb regulacji.\\ 
+
+ Ponadto przyjęto, iż oczekiwanym efektem optymalizacji będzie takie zachowanie układu, by bez względu na wartości zakłóceń $z_1$ i $z_2$, efekt stabilizacji był jak najlepszy.
 

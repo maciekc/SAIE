@@ -51,9 +51,9 @@ zad = [5 10 20 50 70];
 % W zmiennej res s¹ przechowywane posortowane dane, które póŸniej wystarczy
 % tylko wrzucaæ do SAIE_nastawy.xml, czyli ctrl+c, ctrl+v
 
-n=1;
-load('par_new_1.mat');
-index = 5;
+n=2;
+load('temp_params.mat');
+index = 1;
 par = Parametry(index,:);
 
 P1 = par(1);

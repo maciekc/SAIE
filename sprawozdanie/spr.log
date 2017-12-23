@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  12 DEC 2017 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  23 DEC 2017 19:06
 entering extended mode
 **./spr.tex
 (spr.tex
@@ -812,54 +812,58 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
 
+Overfull \hbox (25.06609pt too wide) in paragraph at lines 83--92
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5 <./fig/Z1_New_Signal_1/fig3_1_5.png (PNG copy)>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 114.
+               Default added (so using `tbp') on input line 113.
 
 <fig/Z1_New_Signal_1/fig1_2_20.png, id=34, 421.575pt x 316.0608pt>
 File: fig/Z1_New_Signal_1/fig1_2_20.png Graphic file (type png)
 <use fig/Z1_New_Signal_1/fig1_2_20.png>
 Package pdftex.def Info: fig/Z1_New_Signal_1/fig1_2_20.png  used on input line 
-116. on input line 116.
+115. on input line 115.
 Package pdftex.def Info: Requested size: 295.10048pt x 221.24104pt on input lin
-e 116.
+e 115.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 122.
+               Default added (so using `tbp') on input line 121.
 
 <fig/Z1_New_Signal_1/fig1_2_70.png, id=35, 421.575pt x 316.0608pt>
 File: fig/Z1_New_Signal_1/fig1_2_70.png Graphic file (type png)
 <use fig/Z1_New_Signal_1/fig1_2_70.png>
 Package pdftex.def Info: fig/Z1_New_Signal_1/fig1_2_70.png  used on input line 
-124. on input line 124.
+123. on input line 123.
 Package pdftex.def Info: Requested size: 295.10048pt x 221.24104pt on input lin
-e 124.
+e 123.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 130.
+               Default added (so using `tbp') on input line 129.
 
 <fig/Z1_New_Signal_1/fig1_3_20.png, id=36, 421.575pt x 316.0608pt>
 File: fig/Z1_New_Signal_1/fig1_3_20.png Graphic file (type png)
 <use fig/Z1_New_Signal_1/fig1_3_20.png>
 Package pdftex.def Info: fig/Z1_New_Signal_1/fig1_3_20.png  used on input line 
-132. on input line 132.
+131. on input line 131.
 Package pdftex.def Info: Requested size: 295.10048pt x 221.24104pt on input lin
-e 132.
+e 131.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 138.
+               Default added (so using `tbp') on input line 137.
 
 <fig/Z1_New_Signal_1/fig1_3_70.png, id=37, 421.575pt x 316.0608pt>
 File: fig/Z1_New_Signal_1/fig1_3_70.png Graphic file (type png)
 <use fig/Z1_New_Signal_1/fig1_3_70.png>
 Package pdftex.def Info: fig/Z1_New_Signal_1/fig1_3_70.png  used on input line 
-140. on input line 140.
+139. on input line 139.
 Package pdftex.def Info: Requested size: 295.10048pt x 221.24104pt on input lin
-e 140.
+e 139.
 ) [6] [7 <./fig/Z1_New_Signal_1/fig1_2_20.png (PNG copy)> <./fig/Z1_New_Signal_
 1/fig1_2_70.png (PNG copy)>] [8 <./fig/Z1_New_Signal_1/fig1_3_20.png (PNG copy)
 > <./fig/Z1_New_Signal_1/fig1_3_70.png (PNG copy)>]
@@ -895,7 +899,7 @@ iKTeX/2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Daniel Rubak/AppData/Roaming
 /MiKTeX/2.9/fonts/type1/public/pl/plsy10.pfb><C:/Users/Daniel Rubak/AppData/Roa
 ming/MiKTeX/2.9/fonts/type1/public/pl/plsy8.pfb><C:/Users/Daniel Rubak/AppData/
 Roaming/MiKTeX/2.9/fonts/type1/public/pl/plti12.pfb>
-Output written on spr.pdf (10 pages, 209042 bytes).
+Output written on spr.pdf (10 pages, 208984 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

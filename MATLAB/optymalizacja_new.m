@@ -58,15 +58,15 @@ options = optimoptions('fmincon','Display','iter','MaxIterations',100);
 zad = [5 10 20 50 70];
 
 Parametry = [];
-for i = 1:5
+for i = 1:1
     f = inf;
     par = [];
     r = zad(i);
-    while (f > r*0.12*1e5)
+    while (f > r*0.088*1e5)
     i
     UB(1) = 0.1*limit2/r;
     [par f] = fmincon(@cel, X0, A, B,[],[],LB,UB,[],options)
-        if (f > r*0.12*1e5)
+        if (f > r*0.088*1e5)
             X0 = rand(1,7);
         end
 %     par = fmincon(@cel_P, X0, A, B,[],[],LB,UB,[],options)
@@ -78,17 +78,18 @@ end
 
 %%
 
-index = 5;
-par = Parametry(index,:);
-r = zad(index);
-
-P1 = par(1);
-D1 = par(2);
-P2 = par(3);
-D2 = par(4);
-P3 = par(5);
-I3 = par(6);
-Kr = par(7);
-% P4 = par(8);
-
-sim('model2',50)
+% index = 2;
+% par = Parametry(index,:);
+% r = zad(index);
+% 
+% P1 = par(1);
+% D1 = par(2);
+% P2 = par(3);
+% D2 = par(4);
+% P3 = par(5);
+% I3 = par(6);
+% Kr = par(7);
+% % P4 = par(8);
+% 
+% sim('model2',50)
+save('temp_params.mat', 'Parametry');

@@ -1,13 +1,13 @@
 \chapter{Optymalizacja}
  
-\section{Optymalizacja nastaw regulatora}
+\section{Wprowadzenie}
 
-Do optymalizacji nastaw regulatorów wykorzystano skrypty zawarte w rozdziale \ref{implementacja}. Badania przeprowadzone zostały dla zestawu parametrów obiektu zaprezentowanego w tabeli \ref{tab_par}. Rząd obiektu jak i wartość zadana były były zmiennymi parametrami i  odpowiednio wartości: \\
+Do optymalizacji nastaw regulatorów wykorzystano skrypty zawarte w rozdziale \ref{implementacja}. Badania przeprowadzone zostały dla zestawu parametrów obiektu zaprezentowanego w tabeli \ref{tab_par}. Rząd obiektu jak i wartość zadana były zmiennymi parametrami o następujących wartościach: \\
 $ n \in \{1,2,3\} $ - rząd obiektu, \\
 $ z \in \{ 5,10,20,50,70\}$ - wartość zadana \\ 
-\subsection{Zestawy parametrów}
-W tabeli \ref{tab_par} zamieszczono przyjęte wartości parametrów opisujących obiekt regulacji.
-\begin{table}[]
+%\subsection{Zestawy parametrów}
+%W tabeli \ref{tab_par} zamieszczono przyjęte wartości parametrów opisujących obiekt regulacji.
+\begin{table}[h!]
 	\centering
 	\caption{Zestawy parametrów dla których przeprowadzano optymalizację nastaw regulatorów.}
 	\label{tab_par}
@@ -21,14 +21,14 @@ W tabeli \ref{tab_par} zamieszczono przyjęte wartości parametrów opisujących
 	$\tau$ & 1 \\ \hline
 	\end{tabular}
 \end{table}
+\FloatBarrier
 
-
-\subsection{Optymalizacja nastaw regulatorów}
+\section{Optymalizacja nastaw regulatorów}
 Dla kolejnych zestawów parametrów opisujących system przeprowadzano procedurę optymalizacji nastaw regulatorów minimalizując wska\'znik jakości opisany zależnością \ref{wsk_jak}. Proces optymalizacji przeprowadzany był dla różnych wartości zadanych w obecności znanego zakłócenia $z_2$ (zakłócenie skokowo zmieniające swoją wartość) oraz nieznanego zakłócenia $z_1$. Przebiegi owych zakłóceń przedstawiono na rysunku \ref{fig_zaklocenia}. 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale = 0.7]{fig/Z1_New_Signal_1/fig3_1_5.png}
+	\includegraphics[scale = 0.8]{fig/Z1_New_Signal_1/fig3_1_5.png}
 	\caption		
 	{Zakłócenia.}
 	\label{fig_zaklocenia}
@@ -98,35 +98,36 @@ W tabeli \ref{wsk_jakosci_tab} przedstawiono wartości wskaźnika jakości dla w
 	\end{tabular}
 \end{table}
 
+\FloatBarrier
 Na rysunkach \ref{wykres_1} - \ref{wykres_4} przedstawiono przykładowe przebiegi zawierające odpowiedzi obiektów dla różnych wartości zadanych.
 
-\begin{figure}[]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale = 0.7]{fig/Z1_New_Signal_1/fig1_2_20.png}
+	\includegraphics[scale = 0.8]{fig/Z1_New_Signal_1/fig1_2_20.png}
 	\caption		
 	{Odpowiedź obiektu drugiego rzędu, r = 20}
 	\label{wykres_1}
 \end{figure} 
 
-\begin{figure}[]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale = 0.7]{fig/Z1_New_Signal_1/fig1_2_70.png}
+	\includegraphics[scale = 0.8]{fig/Z1_New_Signal_1/fig1_2_70.png}
 	\caption		
 	{Odpowiedź obiektu drugiego rzędu, r = 70}
 	\label{wykres_2}
 \end{figure} 
 
-\begin{figure}[]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale = 0.7]{fig/Z1_New_Signal_1/fig1_3_20.png}
+	\includegraphics[scale = 0.8]{fig/Z1_New_Signal_1/fig1_3_20.png}
 	\caption		
 	{Odpowiedź obiektu trzeciego rzędu, r = 20}
 	\label{wykres_3}
 \end{figure} 
 
-\begin{figure}[]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale = 0.7]{fig/Z1_New_Signal_1/fig1_3_70.png}
+	\includegraphics[scale = 0.8]{fig/Z1_New_Signal_1/fig1_3_70.png}
 	\caption		
 	{Odpowiedź obiektu trzeciego rzędu, r = 70}
 	\label{wykres_4}

@@ -8,4 +8,4 @@
 \contentsline {chapter}{\numberline {3}Optymalizacja}{8}
 \contentsline {section}{\numberline {3.1}Wprowadzenie}{8}
 \contentsline {section}{\numberline {3.2}Optymalizacja nastaw regulator\IeC {\'o}w}{8}
-\contentsline {chapter}{\numberline {4}Wnioski}{13}
+\contentsline {chapter}{\numberline {4}Wnioski}{15}

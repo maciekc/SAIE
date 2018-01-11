@@ -1,6 +1,6 @@
 \chapter{Implementacja}
 \label{implementacja}
-Do dobrania nastaw regulatorów wykorzystano funkcje optymalizującą \textit{fmincon}, dostępną w środowisku Matlab/Simulink. Funkcja ta bazując na modelu obiektu (rys. \ref{model_systemu}), minimalizowała zadany wska\'znik jakości, który w tym przypadku był podany wzorem \ref{wsk_jak}. \\
+Do dobrania nastaw regulatorów wykorzystano funkcje optymalizującą \textit{fmincon}, dostępną w środowisku \textit{Matlab/Simulink}. Funkcja ta, bazując na modelu obiektu (rys. \ref{model_systemu}), minimalizowała zadany wska\'znik jakości, który w tym przypadku był podany wzorem \ref{wsk_jak}. \\
 Na listingu \ref{cel_matlab} zaprezentowano kod funkcji wywoływanej przez procedurę optymalizującą. \\
 Aby umożliwić poprawne działanie procedury \textit{fmincon} należało do funkcji wywołującej model Simulika dodać linijkę
 \begin{center}
